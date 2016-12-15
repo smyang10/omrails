@@ -6,6 +6,10 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 
 gem 'devise'
 
+gem 'activeadmin', '~>1.0.0.pre4'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+
+gem 'jquery-ui-rails', '~> 4.2.1'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
