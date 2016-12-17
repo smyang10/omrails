@@ -6,6 +6,18 @@ body {
 	background-size: cover;
 }
 
+h1, .h1-red {
+  padding-top: 1rem;
+}
+
+a.link {
+  text-decoration: none;
+}
+
+.h1-red {
+  color: firebrick
+}
+
 .jumbotron-home {
     background-image: url(image_path('msg_art.jpg'));
     background-repeat: no-repeat;
@@ -31,6 +43,28 @@ h2, .form-group, .col-text, .about, .contact {
   bottom: 0;
   left: 0;
   padding: 0rem;
-  padding-bottom: -1rem;
+  padding-bottom: -10rem;
   text-align: center;
+
 } 
+
+.container-cards {
+    background-color: tan;
+    margin-bottom: 2rem;
+}
+
+.card {
+  background-color: transparent;
+  border: none;
+  padding: 0.5rem;
+}
+
+.card-img {
+  height: 16%;
+  width: 16%;
+}
+
+.card-img:hover {
+  transition: all 0.3s;
+  transform: scale(1.1);
+}

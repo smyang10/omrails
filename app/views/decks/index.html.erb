@@ -1,0 +1,36 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <h1>Decks</h1>
+
+  <table class="table table-inverse">
+    <thead class="thead-inverse">
+      <tr>
+        <th>User</th>
+        <th>Cards</th>
+        <th>Size</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @decks.each do |deck| %>
+        <tr>
+          <td><%= deck.user.email %></td>
+          <td><%= deck.cards %></td>
+          <td><%= deck.size %></td>
+          <td><%= link_to 'Show', deck %></td>
+          <% if deck.user == current_user %>
+            <td><%= link_to 'Edit', edit_deck_path(deck) %></td>
+            <td><%= link_to 'Destroy', deck, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Deck', new_deck_path %>
+
+</div>

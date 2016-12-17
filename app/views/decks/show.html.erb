@@ -1,0 +1,19 @@
+<div class="container">
+	<p id="notice"><%= notice %></p>
+
+	<p>
+	  <strong>Cards:</strong>
+	  <%= @deck.cards %>
+	</p>
+
+	<p>
+	  <strong>Size:</strong>
+	  <%= @deck.size %>
+	</p>
+
+	<% if @deck.user == current_user %>
+		<%= link_to 'Edit', edit_deck_path(@deck) %> |
+	<% end %>
+	<%= link_to 'Back', decks_path %>
+
+</div>
