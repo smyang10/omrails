@@ -10,7 +10,7 @@ h1, .h1-red {
   padding-top: 1rem;
 }
 
-a.link {
+a {
   text-decoration: none;
 }
 
@@ -67,4 +67,18 @@ h2, .form-group, .col-text, .about, .contact {
 .card-img:hover {
   transition: all 0.3s;
   transform: scale(1.1);
+}
+
+.card-tweet {
+  color: firebrick;
+  border: solid;
+  background-color: tan;
+}
+
+.list-group-item-heading, .list-group-item-text {
+  color: firebrick;
+}
+
+.nav-margin-bottom {
+  margin-bottom: 1em;
 }
