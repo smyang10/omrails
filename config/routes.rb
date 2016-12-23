@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   #get 'users/:username', to: "users#show", as: 'user'
   ActiveAdmin.routes(self)
   devise_for :users
@@ -14,6 +15,13 @@ Rails.application.routes.draw do
     member do
       post 'follow', to: 'follows#create'
       delete 'unfollow', to: 'follows#destroy'
+    end
+  end
+
+  resources :items do
+    member do
+      post 'vote', to: 'votes#create'
+      post 'unvote', to: 'votes#destroy'
     end
   end
 
