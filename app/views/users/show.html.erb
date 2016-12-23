@@ -6,6 +6,14 @@
         <div class="card-block card-tweet">
           <h4 class="card-title"><%= @user.username %></h4>
           <p class="card-text"><%= @user.name %></p>
+
+          <% if current_user.following?(@user) %>
+            <p class="card-text"><%= link_to "Unfollow", unfollow_user_path(@user.username), method: :delete %></p>
+
+          <% else %>
+            <p class="card-text"><%= link_to "Follow", follow_user_path(@user.username), method: :post %></p>
+          <% end %>
+          
         </div>
       </div>
     </div>
@@ -21,4 +29,6 @@
     </div>
   </div>
 </div>
+
+
 
