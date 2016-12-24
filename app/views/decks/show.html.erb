@@ -1,15 +1,23 @@
 <div class="container">
-	<p id="notice"><%= notice %></p>
+	<!--<p id="notice"><%= notice %></p>-->
 
-	<p>
-	  <strong>Cards:</strong>
-	  <%= @deck.cards %>
-	</p>
+	<div class="container container-cards">
+		<p class="firebrick-text">
+		  <strong>Name:</strong>
+		  <%= @deck.title %>
+		</p>
 
-	<p>
-	  <strong>Size:</strong>
-	  <%= @deck.size %>
-	</p>
+		<p class="firebrick-text">
+		  <strong>By:</strong>
+		  <%= @deck.user.username %>
+		</p>
+
+		<p class="firebrick-text">
+		  <strong>Cards:</strong>
+		  <%= @deck.cards %>
+		</p>
+
+	</div>
 
 	<% if @deck.user == current_user %>
 		<%= link_to 'Edit', edit_deck_path(@deck) %> |
