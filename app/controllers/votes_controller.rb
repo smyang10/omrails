@@ -2,14 +2,14 @@ class VotesController < ApplicationController
 	before_action :authenticate_user!
 
   def create
-  	item = Item.find(params[:id])
-  	item.liked_by current_user
-  	redirect_to items_path, notice: "Voted for " + item.title
+  	deck = Deck.find(params[:id])
+  	deck.liked_by current_user
+  	redirect_to decks_path, notice: "Voted for " + deck.title
   end
 
   def destroy
-  	item = Item.find(params[:id])
-  	item.unliked_by current_user
-  	redirect_to items_path, notice: "Unvoted for " + item.title
+  	deck = Deck.find(params[:id])
+  	deck.unliked_by current_user
+  	redirect_to decks_path, notice: "Unvoted for " + deck.title
   end
 end

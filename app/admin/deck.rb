@@ -13,6 +13,6 @@ ActiveAdmin.register Deck do
 #   permitted
 # end
 
-	permit_params :user, :cards
+	permit_params :user, :cards, :title
 
 end
