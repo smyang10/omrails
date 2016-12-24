@@ -27,6 +27,7 @@ a {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    margin-top: -1em;
 }
 
 .jumbotron-about {
@@ -84,5 +85,10 @@ h2, .form-group, .col-text, .about, .contact {
 }
 
 .nav-margin-bottom {
-  margin-bottom: 1em;
+  //margin-bottom: 1em;
+}
+
+.margin-top-2 {
+  margin-top: 2em;
+  padding: 2em;
 }
