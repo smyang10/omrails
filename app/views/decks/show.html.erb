@@ -2,20 +2,38 @@
 	<!--<p id="notice"><%= notice %></p>-->
 
 	<div class="container container-cards margin-top-2">
-		<p class="firebrick-text">
-		  <strong>Name:</strong>
-		  <%= @deck.title %>
-		</p>
+		<center>
+			<p class="firebrick-text">
+			  <strong>Name:</strong>
+			  <%= @deck.title %>
+			</p>
+		</center>
 
-		<p class="firebrick-text">
-		  <strong>By:</strong>
-		  <%= @deck.user.username %>
-		</p>
+		<% if @deck.image.present? %>
+			<center><%= image_tag @deck.image, class: "img-fluid deck-cover" %></center>
+		<% end %>
+
+		<center>
+			<p class="firebrick-text">
+			  <strong>Created by:</strong>
+			  <%= @deck.user.username %>
+			</p>
+		</center>
 
 		<p class="firebrick-text">
 		  <strong>Cards:</strong>
 		  <%= @deck.cards %>
 		</p>
+
+
+
+		<% if user_signed_in? %>
+		  <% if current_user.following?(@deck) %>
+		    <p class="firebrick-text"><%= link_to "Unfollow", unfollow_deck_path(@deck.id), method: :delete %></p>
+		  <% else %>
+		    <p class="firebrick-text"><%= link_to "Follow", follow_deck_path(@deck.id), method: :post %></p>
+		  <% end %>
+		<% end %>
 
 	</div>
 

@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   end
   get 'feed', to: 'feed#show'
 
-  resources :users, only: :show, param: :username do
+  resources :decks
+  resources :decks, only: :show, param: :id do
     member do
       post 'follow', to: 'follows#create'
       delete 'unfollow', to: 'follows#destroy'
@@ -27,7 +28,7 @@ Rails.application.routes.draw do
 
 
   resources :items
-  resources :decks
+  
   resources :tweets
   
   root 'pages#home'
